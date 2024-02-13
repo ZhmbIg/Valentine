@@ -17,12 +17,14 @@
             <img src="./Heartshooting.gif" alt="Cute animated illustration">
         </div>
         <div class="buttons">
-            <button class="btn" id="yesButton" onclick="yesPage()">Да</button>
+            <button class="btn" id="yesButton">Да</button>
             <button class="btn" id="noButton">Нет</button>
             <script>
-                const btn = document.getElementById("noButton")
-                btn.addEventListener('click', noPage)
-                btn.addEventListener('mouseover', moveButton)
+                const noButton = document.getElementById("noButton")
+                const yesButton = document.getElementById("yesButton")
+                yesButton.addEventListener('click', yesPage)
+                noButton.addEventListener('click', noPage)
+                noButton.addEventListener('mouseover', moveButton)
                 function yesPage() {
                     window.location.href = "yes.html";
                 }
@@ -30,10 +32,10 @@
                     window.location.href = "no.html";
                 }
                 function moveButton() {
-                    let x = Math.random() * (window.innerWidth - btn.offsetWidth);
-                    let y = Math.random() * (window.innerHeight - btn.offsetHeight);
-                    btn.style.left = `${x}px`;
-                    btn.style.top = `${y}px`;
+                    let x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+                    let y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+                    noButton.style.left = `${x}px`;
+                    noButton.style.top = `${y}px`;
                 }
             </script>
         </div>
